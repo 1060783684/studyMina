@@ -26,6 +26,8 @@ public class StringDecoder implements ProtocolDecoder {
         String msg = new String(data,charset);
         //将消息透传下去
         out.write(msg);
+        //注意,这里不能调用ioSession,否则消息将直接写出而不会透传至handler
+//        ioSession.write(msg);
 
 //        throw new Exception("Decoder Exception");
     }
