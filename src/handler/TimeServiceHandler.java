@@ -11,8 +11,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by root on 17-12-11.
  */
+//在mina框架中这个handler是一个单例一个框架acceptor只有一个
 public class TimeServiceHandler extends IoHandlerAdapter {
-    private static AtomicInteger clientCount = new AtomicInteger(0);
+    private final AtomicInteger clientCount = new AtomicInteger(0);
 
     //当session被创建时调用
     @Override
